@@ -180,7 +180,7 @@ if ($_POST)
 								
 								$infoRow = mysql_fetch_assoc($infoSql);
 								
-								$tableEngine = ($infoRow['Type']) ? $infoRow['Type'] : $infoRow['Engine'];
+								$tableEngine = (array_key_exists("Type", $infoRow)) ? $infoRow['Type'] : $infoRow['Engine'];
 								
 								if (array_key_exists('Collation', $infoRow) && isset($collationList))
 								{
